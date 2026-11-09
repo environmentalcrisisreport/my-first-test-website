@@ -1,0 +1,1039 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Environmental Crisis Report — a student documentary examining environmental challenges in Ifelodun Community.">
+  <meta name="theme-color" content="#123d32">
+
+  <title>Environmental Crisis Report | A Documentary Film</title>
+
+  <style>
+    :root {
+      --forest: #123d32;
+      --forest-dark: #0b2822;
+      --green: #2f7558;
+      --lime: #c7e38b;
+      --cream: #f5f4ed;
+      --paper: #fffefa;
+      --ink: #17231e;
+      --muted: #66736c;
+      --line: #dfe5dc;
+      --max-width: 1160px;
+      --shadow: 0 18px 50px rgba(12, 35, 27, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img, iframe {
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: relative;
+      z-index: 5;
+      background: var(--forest-dark);
+      color: white;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--lime);
+      color: var(--forest-dark);
+      font-size: 20px;
+    }
+
+    .brand-name {
+      line-height: 1.15;
+    }
+
+    .brand-name small {
+      display: block;
+      margin-top: 4px;
+      color: #c8d7cf;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #e5eee8;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--lime);
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: white;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(7, 30, 24, 0.94) 0%,
+          rgba(7, 30, 24, 0.78) 48%,
+          rgba(7, 30, 24, 0.28) 100%
+        ),
+        linear-gradient(135deg, #1b5944, #102e27);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(5, 22, 18, 0.35),
+        transparent 55%
+      );
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding-block: 90px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 20px;
+      color: var(--lime);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: var(--lime);
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+    }
+
+    .hero-copy {
+      max-width: 610px;
+      margin-bottom: 32px;
+      color: #e2ebe5;
+      font-size: clamp(16px, 2vw, 19px);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border: 2px solid transparent;
+      border-radius: 7px;
+      background: var(--lime);
+      color: var(--forest-dark);
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #d8efaa;
+    }
+
+    .button-outline {
+      border-color: rgba(255,255,255,0.65);
+      background: transparent;
+      color: white;
+    }
+
+    .button-outline:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* INTRODUCTION STRIP */
+
+    .intro-strip {
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 2fr;
+      gap: 35px;
+      align-items: center;
+      padding-block: 34px;
+    }
+
+    .intro-grid strong {
+      color: var(--forest);
+      font-size: 17px;
+    }
+
+    .intro-grid p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    section {
+      scroll-margin-top: 24px;
+    }
+
+    .section {
+      padding-block: 88px;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      color: var(--forest);
+      font-size: clamp(30px, 4.5vw, 46px);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    .section-heading p,
+    .body-copy {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* ABOUT SECTION AND CRISIS PHOTOS */
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .feature-image {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      min-height: 360px;
+    }
+
+    .feature-image a {
+      display: block;
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-image img {
+      display: block;
+      width: 100%;
+      height: 174px;
+      object-fit: cover;
+      border-radius: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-image a:hover img {
+      transform: scale(1.05);
+    }
+
+    .text-panel {
+      padding-block: 12px;
+    }
+
+    .text-panel h3 {
+      margin-bottom: 14px;
+      color: var(--forest);
+      font-size: 25px;
+      line-height: 1.2;
+    }
+
+    .text-panel p {
+      color: var(--muted);
+    }
+
+    /* ENVIRONMENTAL ISSUE CARDS */
+
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .info-card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: white;
+    }
+
+    .card-number {
+      display: inline-grid;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 18px;
+      place-items: center;
+      border-radius: 10px;
+      background: #eaf1df;
+      color: var(--forest);
+      font-weight: 900;
+    }
+
+    .info-card h3 {
+      margin-bottom: 9px;
+      color: var(--forest);
+      font-size: 19px;
+    }
+
+    .info-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* DOCUMENTARY VIDEO */
+
+    .video-section {
+      background: var(--forest);
+      color: white;
+    }
+
+    .video-section h2 {
+      color: white;
+    }
+
+    .video-section .section-kicker {
+      color: var(--lime);
+    }
+
+    .video-section .section-heading p {
+      color: #d1dfd7;
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      background: #071e18;
+      box-shadow: 0 22px 60px rgba(0,0,0,0.22);
+    }
+
+    .video-thumbnail {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #111;
+    }
+
+    .video-thumbnail img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .video-thumbnail:hover img {
+      transform: scale(1.04);
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      width: 75px;
+      height: 55px;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-50%, -50%);
+      border-radius: 14px;
+      background: #e62117;
+      color: white;
+      font-size: 30px;
+    }
+
+    .video-note {
+      margin: 14px 0 0;
+      color: #d1dfd7;
+      font-size: 13px;
+    }
+
+    /* CALL TO ACTION */
+
+    .action-section {
+      background: var(--cream);
+    }
+
+    .action-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      padding: 34px;
+      border-radius: 14px;
+      background: white;
+      box-shadow: 0 10px 35px rgba(12,35,27,0.06);
+    }
+
+    .action-box h2 {
+      max-width: 600px;
+      margin-bottom: 8px;
+      font-size: clamp(27px, 4vw, 38px);
+    }
+
+    .action-box p {
+      max-width: 650px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    /* OUR TEAM GALLERY */
+
+    .team-gallery {
+      background: #f4f7f4;
+      padding: 70px 20px;
+    }
+
+    .gallery-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .team-gallery h2 {
+      color: #174d32;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .team-gallery p {
+      max-width: 750px;
+      margin: 0 auto 35px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-grid img {
+      display: block;
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.04);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding-block: 30px;
+      background: var(--forest-dark);
+      color: #d4e0d9;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 13px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+    }
+
+    /* MOBILE RESPONSIVENESS */
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding-block: 17px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: 540px;
+      }
+
+      .intro-grid,
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .section {
+        padding-block: 64px;
+      }
+
+      .feature-image {
+        min-height: 270px;
+      }
+
+      .info-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .action-box {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 25px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid img {
+        height: 170px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER AND NAVIGATION -->
+
+  <header class="site-header">
+    <div class="container nav">
+
+      <a class="brand" href="#home"
+         aria-label="Environmental Crisis Report home">
+
+        <span class="brand-mark" aria-hidden="true">✳</span>
+
+        <span class="brand-name">
+          IFELODUN: THE COMMUNITY BEYOND THE CANAL
+          <small>A Documentary film</small>
+        </span>
+
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#issues">Key issues</a>
+        <a href="#documentary">Watch documentary</a>
+        <a href="#action">Take action</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <p class="eyebrow">
+            A Documented film project
+          </p>
+
+          <h1>
+            Our environment. Our responsibility.
+          </h1>
+
+          <p class="hero-copy">
+            Examining the environmental challenges facing ifelodun community,
+            sharing the experience and voices of its resident and raising awareness
+            about the urgent need for collective responsibility and action to protect
+            our environment and build a healthier community.
+          </p>
+
+          <div class="button-row">
+
+            <a class="button" href="#documentary">
+              Watch the documentary
+            </a>
+
+            <a class="button button-outline" href="#about">
+              Explore the report
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- INTRODUCTION -->
+
+    <div class="intro-strip">
+
+      <div class="container intro-grid">
+
+        <strong>
+          Environmental Crisis Report
+        </strong>
+
+        <p>
+          A documentary-led look at an environmental issue in our area,
+          its effects on everyday life, and the importance of responsible
+          environmental practices.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- ABOUT SECTION -->
+
+    <section class="section" id="about">
+
+      <div class="container two-column">
+
+        <div class="feature-image">
+
+          <!-- Clicking a crisis photo opens the full-size image. -->
+          <a href="images/crisis-1.jpg" target="_blank" rel="noopener">
+            <img src="images/crisis-1.jpg" alt="Environmental crisis photograph 1" loading="lazy" decoding="async">
+          </a>
+          <a href="images/crisis-2.jpg" target="_blank" rel="noopener">
+            <img src="images/crisis-2.jpg" alt="Environmental crisis photograph 2" loading="lazy" decoding="async">
+          </a>
+          <a href="images/crisis-3.jpg" target="_blank" rel="noopener">
+            <img src="images/crisis-3.jpg" alt="Environmental crisis photograph 3" loading="lazy" decoding="async">
+          </a>
+          <a href="images/crisis-4.jpg" target="_blank" rel="noopener">
+            <img src="images/crisis-4.jpg" alt="Environmental crisis photograph 4" loading="lazy" decoding="async">
+          </a>
+          <a href="images/crisis-5.jpg" target="_blank" rel="noopener">
+            <img src="images/crisis-5.jpg" alt="Environmental crisis photograph 5" loading="lazy" decoding="async">
+          </a>
+          <a href="images/crisis-6.jpg" target="_blank" rel="noopener">
+            <img src="images/crisis-6.jpg" alt="Environmental crisis photograph 6" loading="lazy" decoding="async">
+          </a>
+
+      </div>
+
+        <div class="text-panel">
+
+          <p class="section-kicker">
+            About this project
+          </p>
+
+          <h2>
+            Giving attention to an issue that affects us all.
+          </h2>
+
+          <p>
+            Environmental problems can affect public health, livelihoods,
+            homes, wildlife and the quality of life in a community.
+            Understanding a problem is an important step towards
+            addressing it.
+          </p>
+
+          <p>
+            This student documentary uses visual reporting, observation
+            and interviews to present the issue and encourage informed
+            discussion. The report focuses on the evidence gathered
+            for this project.
+          </p>
+
+          <p>
+            <strong>Project location:</strong>
+            Ifelodun Community
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ENVIRONMENTAL ISSUES -->
+
+    <section
+      class="section"
+      id="issues"
+      style="background: #f5f4ed;">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="section-kicker">
+            What the report examines
+          </p>
+
+          <h2>
+            Understanding the environmental challenge.
+          </h2>
+
+          <p>
+            Use these sections to introduce the specific findings from
+            your footage, observations and interviews. Replace the
+            sample wording with facts confirmed by your group.
+          </p>
+
+        </div>
+
+        <div class="info-cards">
+
+          <article class="info-card">
+
+            <span class="card-number">01</span>
+
+            <h3>The problem</h3>
+
+            <p>
+              Describe the environmental issue observed, where it occurs,
+              and what the evidence collected shows.
+            </p>
+
+          </article>
+
+          <article class="info-card">
+
+            <span class="card-number">02</span>
+
+            <h3>The impact</h3>
+
+            <p>
+              Explain how the issue affects residents, the local
+              environment, public spaces or livelihoods, using verified
+              interview findings.
+            </p>
+
+          </article>
+
+          <article class="info-card">
+
+            <span class="card-number">03</span>
+
+            <h3>Possible responses</h3>
+
+            <p>
+              Present practical recommendations, community initiatives
+              or responsible actions relevant to the issue.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- YOUTUBE DOCUMENTARY -->
+
+    <section
+      class="section video-section"
+      id="documentary">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="section-kicker">
+            Watch the documentary
+          </p>
+
+          <h2>
+            The story, told through images and voices.
+          </h2>
+
+          <p>
+            Watch the documentary below to see the locations,
+            observations and interviews gathered for this project.
+          </p>
+
+        </div>
+
+        <div class="video-frame">
+
+          <a
+            class="video-thumbnail"
+            href="https://www.youtube.com/watch?v=gLTtCOk4l5M"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Watch Environmental Crisis Report on YouTube">
+
+            <img
+              src="https://img.youtube.com/vi/gLTtCOk4l5M/hqdefault.jpg"
+              alt="Environmental Crisis Report documentary thumbnail">
+
+            <span class="play-button">▶</span>
+          </a>
+
+        </div>
+
+        <p class="video-note">
+          A deeper insight on the environmental crises presented to you
+          through visual and sound.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- ENVIRONMENTAL AWARENESS -->
+
+    <section
+      class="section action-section"
+      id="action">
+
+      <div class="container">
+
+        <div class="action-box">
+
+          <div>
+
+            <p class="section-kicker">
+              Awareness is a starting point
+            </p>
+
+            <h2>
+              A healthier environment requires shared responsibility.
+            </h2>
+
+            <p>
+              Learn about the issue, share reliable information,
+              dispose of waste responsibly and support practical
+              efforts to protect the environment in your community.
+            </p>
+
+          </div>
+
+          <a class="button" href="#home">
+            Back to top ↑
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- OUR TEAM GALLERY: KEEP THIS BEFORE THE FOOTER -->
+
+  <section class="team-gallery" id="our-team">
+
+    <div class="gallery-container">
+
+      <h2>Our Team in Action</h2>
+
+      <p>
+        Behind this documentary is a team committed to creating awareness
+        about environmental issues in our community. These photographs
+        capture our participation, teamwork and activities during the project.
+      </p>
+
+      <div class="gallery-grid">
+
+        <!-- TEAM PHOTO 1 -->
+      
+<a href="images/team-1.jpg" target="_blank" rel="noopener">
+  <img src="images/team-1.jpg" alt="Our team photograph 1" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-2.jpg" target="_blank" rel="noopener">
+  <img src="images/team-2.jpg" alt="Our team photograph 2" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-3.jpg" target="_blank" rel="noopener">
+  <img src="images/team-3.jpg" alt="Our team photograph 3" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-4.jpg" target="_blank" rel="noopener">
+  <img src="images/team-4.jpg" alt="Our team photograph 4" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-5.jpg" target="_blank" rel="noopener">
+  <img src="images/team-5.jpg" alt="Our team photograph 5" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-6.jpg" target="_blank" rel="noopener">
+  <img src="images/team-6.jpg" alt="Our team photograph 6" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-7.jpg" target="_blank" rel="noopener">
+  <img src="images/team-7.jpg" alt="Our team photograph 7" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-8.jpg" target="_blank" rel="noopener">
+  <img src="images/team-8.jpg" alt="Our team photograph 8" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-9.jpg" target="_blank" rel="noopener">
+  <img src="images/team-9.jpg" alt="Our team photograph 9" loading="lazy" decoding="async">
+</a>
+
+<a href="images/team-10.jpg" target="_blank" rel="noopener">
+  <img src="images/team-10.jpg" alt="Our team photograph 10" loading="lazy" decoding="async">
+</a>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER / FINAL CREDITS -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <p>
+        © 2026 Environmental Crisis Report
+      </p>
+
+      <p>
+        Created as a student documentary project.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
